@@ -15,12 +15,12 @@
       -8192px 512px; }
 }
 
-@mixin vendor-prefix($name, $argument) {
-  -webkit-#{$name}:stars #{$argument};
-  -ms-#{$name}:stars #{$argument};
-  -moz-#{$name}:stars #{$argument};
-  -o-#{$name}:stars #{$argument};
-  #{$name}:stars #{$argument};
+@mixin vendor-prefix($type, $name, $argument) {
+  -webkit-#{$type}:#{$name} #{$argument};
+  -ms-#{$type}:#{$name} #{$argument};
+  -moz-#{$type}:#{$name} #{$argument};
+  -o-#{$type}:#{$name} #{$argument};
+  #{$type}:#{$name} #{$argument};
 }
  
 
@@ -33,7 +33,7 @@ body {
     url(../img/stars3.png);
        
 /*    Define Stars*/
-    @include vendor-prefix(animation, 32s linear infinite);
+    @include vendor-prefix(animation, stars, 32s linear infinite);
 }
 
  
@@ -41,12 +41,7 @@ body {
 /*  Define Zora */
 
 img {
--webkit-animation:zora 13s linear .5s infinite alternate;
--moz-animation:zora 13s linear .5s infinite alternate;
--ms-animation:zora 13s linear .5s infinite alternate;
--o-animation:zora 13s linear .5s infinite alternate;
-animation:zora 13s linear .5s infinite alternate;
-
+@include vendor-prefix(animation, zora, 13s linear .5s infinite alternate);
 position: absolute;
 top: 100px;
 

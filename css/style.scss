@@ -1,3 +1,6 @@
+//variables
+$background-color: #4b6473;
+
 //dynamic mixin  
 @mixin zora-movement{ 
     0%   { left:0px; top:100px;}
@@ -26,7 +29,7 @@
 
 body {
 	margin: 0;
-	background-color: #4b6473;
+	background-color: $background-color;
 	background-image:
     url(../img/stars1.png),
     url(../img/stars2.png),
